@@ -1,0 +1,96 @@
+name: brogres
+description: "No description!"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # Package get for viewModels/controller
+  get: ^4.6.6
+
+  # Package get_it for dependency injector
+  get_it: ^8.0.0
+
+  # Package go_router for routing
+  go_router: ^14.3.0
+
+  # Package dio for http requests
+  dio: ^5.7.0
+  pretty_dio_logger: ^1.4.0
+  dio_smart_retry: ^6.0.0
+
+  # Package shared_preferences for local storage
+  shared_preferences: ^2.3.2
+
+  # Package google_fonts for using Google Fonts
+  google_fonts: ^6.2.1
+
+  # Package Freezed for data model
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+
+  # Package flutter_screenutil for responsive design
+  flutter_screenutil: ^5.9.3
+
+  # Other Package
+  shimmer: ^3.0.0
+  dartz: ^0.10.1
+  gap: ^3.0.1
+  smooth_page_indicator: ^1.2.0+3
+  animated_size_and_fade: ^4.0.0
+  marquee: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+  # Helper package Freezed for data model
+  build_runner: ^2.4.13
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logos/
+    - assets/illustrations/
+    - assets/icons/
+
+  
+  
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
