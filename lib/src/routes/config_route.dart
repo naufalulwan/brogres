@@ -1,5 +1,6 @@
 import 'package:brogres/src/core/constants/route_string.dart';
 import 'package:brogres/src/screens/auth_screen/login_screen.dart';
+import 'package:brogres/src/screens/dashboard_screen/dashboard_screen.dart';
 import 'package:go_router/go_router.dart';
 
 import '../screens/maintenance_screen.dart';
@@ -28,6 +29,10 @@ class ConfigRoute {
       GoRoute(
         path: RouteString.maintenanceScreen,
         builder: (context, state) => const MaintenanceScreen(),
+      ),
+      GoRoute(
+        path: RouteString.dashboardScreen,
+        builder: (context, state) => const DashboardScreen(),
       ),
     ],
     errorBuilder: (context, state) {

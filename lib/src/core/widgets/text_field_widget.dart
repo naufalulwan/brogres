@@ -10,14 +10,18 @@ class TextFieldWidget extends StatefulWidget {
       {super.key,
       required this.controller,
       required this.title,
+      this.textfieldKey,
       this.isAddTitle = false,
       this.isAddOn = false,
       this.textAddOn,
+      this.onTap,
       this.onTapAddOn,
       this.isTextVisibility = false,
       this.textInputAction,
       this.onChanged,
       this.validator});
+
+  final GlobalKey<State<StatefulWidget>>? textfieldKey;
 
   final TextEditingController? controller;
   final TextInputAction? textInputAction;
@@ -29,6 +33,7 @@ class TextFieldWidget extends StatefulWidget {
   final bool? isAddOn;
   final bool? isTextVisibility;
 
+  final void Function()? onTap;
   final void Function()? onTapAddOn;
   final void Function(String)? onChanged;
   final String? Function(String?)? validator;
@@ -79,6 +84,8 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
 
   Widget textFormField() {
     return TextFormField(
+        key: widget.textfieldKey,
+        onTap: widget.onTap,
         keyboardType: TextInputType.emailAddress,
         textInputAction: widget.textInputAction ?? TextInputAction.done,
         controller: widget.controller,

@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: ColorUtil().primaryOrange,
+      backgroundColor: ColorUtil().secondaryVanilla,
       body: Center(
           child: SizedBox(
         width: 230,

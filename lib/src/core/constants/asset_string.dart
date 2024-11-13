@@ -21,4 +21,7 @@ class AssetString {
   static const String iconFingerprint = "assets/icons/icon-fingerprint.png";
   static const String iconHello = "assets/icons/icon-hello.png";
   static const String iconQuestion = "assets/icons/icon-question.png";
+  static const String iconInsight = "assets/icons/icon-insight.png";
+  static const String iconWallet = "assets/icons/icon-wallet.png";
+  static const String iconCart = "assets/icons/icon-cart.png";
 }

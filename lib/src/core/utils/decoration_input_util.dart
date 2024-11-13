@@ -27,4 +27,12 @@ var decoration = ({
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: ColorUtil().primaryOrange, width: 1),
           borderRadius: BorderRadius.circular(10),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorUtil().errorRed, width: 1),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: ColorUtil().errorRed, width: 1),
+          borderRadius: BorderRadius.circular(10),
         ));

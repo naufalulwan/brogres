@@ -7,6 +7,7 @@ class ColorUtil {
   final Color tertiaryBlack = color("#372F2F");
   final Color touchesBlue = color("#003CFF");
   final Color paymentGreen = color("#8DFF22");
+  final Color errorRed = color("#AF1740");
 
   static MaterialColor color(String hexValue) {
     Color? value;

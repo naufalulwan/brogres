@@ -22,10 +22,29 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
+  final _keyfield1 = GlobalKey<State<StatefulWidget>>();
+  final _keyfield2 = GlobalKey<State<StatefulWidget>>();
+
   final TextEditingController? emailController = TextEditingController();
   final TextEditingController? passwordController = TextEditingController();
 
   bool isChecked = false;
+
+  Future<void> ensureVisibleOnTextArea(
+      {required GlobalKey textfieldKey, int? index}) async {
+    final keyContext = textfieldKey.currentContext;
+
+    if (keyContext != null) {
+      await Future.delayed(const Duration(milliseconds: 500)).then(
+        (value) => Scrollable.ensureVisible(
+          mounted ? keyContext : context,
+          alignment: index == 0 ? 0.4 : 0.62,
+          duration: const Duration(milliseconds: 150),
+          curve: Curves.decelerate,
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,20 +77,24 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: 40,
-            decoration: BoxDecoration(color: ColorUtil().primaryOrange),
-            child: Marquee(
-              text:
-                  'Fusce fermentum, urna eu tempor consequat, ligula nisi dignissim odio, vitae tincidunt lacus sem non lectus. Cras tincidunt augue vel tellus facilisis, at vehicula dui ullamcorper. Phasellus eget nunc a magna ultricies blandit nec vel augue.',
-              style: GoogleFonts.poppins(
-                  fontSize: 14, color: ColorUtil().tertiaryBlack),
-            ),
-          )
+          runningText(context)
         ],
       ),
     ));
+  }
+
+  Widget runningText(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      height: 40,
+      decoration: BoxDecoration(color: ColorUtil().primaryOrange),
+      child: Marquee(
+        text:
+            'Fusce fermentum, urna eu tempor consequat, ligula nisi dignissim odio, vitae tincidunt lacus sem non lectus. Cras tincidunt augue vel tellus facilisis, at vehicula dui ullamcorper. Phasellus eget nunc a magna ultricies blandit nec vel augue.',
+        style:
+            GoogleFonts.poppins(fontSize: 14, color: ColorUtil().tertiaryBlack),
+      ),
+    );
   }
 
   Widget formField(BuildContext context) {
@@ -80,13 +103,28 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Column(
         children: [
           TextFieldWidget(
+            textfieldKey: _keyfield1,
+            onTap: () {
+              ensureVisibleOnTextArea(textfieldKey: _keyfield1, index: 0);
+            },
             controller: emailController,
             isAddTitle: true,
             title: "Email",
             textInputAction: TextInputAction.next,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Email harus diisi";
+              }
+
+              return null;
+            },
           ),
           const Gap(20),
           TextFieldWidget(
+            textfieldKey: _keyfield2,
+            onTap: () {
+              ensureVisibleOnTextArea(textfieldKey: _keyfield2, index: 1);
+            },
             controller: passwordController,
             isAddTitle: true,
             isAddOn: true,
@@ -97,6 +135,13 @@ class _LoginScreenState extends State<LoginScreen> {
               context.push(RouteString.maintenanceScreen);
             },
             textInputAction: TextInputAction.done,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "Password harus diisi";
+              }
+
+              return null;
+            },
           ),
           const Gap(16),
           checkBox(),
@@ -104,7 +149,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ButtonOrangeWidget(
             text: "Login",
             onPressed: () {
-              if (_formKey.currentState!.validate()) {}
+              if (_formKey.currentState!.validate()) {
+                context.push(RouteString.dashboardScreen);
+              }
             },
           ),
           Row(
