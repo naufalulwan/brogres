@@ -1,11 +1,11 @@
-import 'package:brogres/src/core/constants/route_string.dart';
-import 'package:brogres/src/screens/auth_screen/login_screen.dart';
-import 'package:brogres/src/screens/dashboard_screen/dashboard_screen.dart';
 import 'package:go_router/go_router.dart';
 
+import '../core/constants/route_string.dart';
+import '../screens/auth/login_screen.dart';
+import '../screens/dashboard/dashboard_screen.dart';
 import '../screens/maintenance_screen.dart';
-import '../screens/onboarding_screen/onboarding_screen.dart';
-import '../screens/splash_screen/splash_screen.dart';
+import '../screens/onboarding/onboarding_screen.dart';
+import '../screens/splash/splash_screen.dart';
 import '../screens/unknown_screen.dart';
 import 'observer_route.dart';
 

@@ -69,7 +69,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.only(top: 65),
                     child: Image.asset(
                       AssetString.iconHello,
-                      width: 200,
+                      width: 180,
                     ),
                   ),
                   Form(key: _formKey, child: formField(context)),

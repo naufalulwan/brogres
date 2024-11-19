@@ -18,7 +18,7 @@ class ButtonOrangeWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 25),
       child: Ink(
         width: width ?? double.infinity,
-        height: 50,
+        height: 45,
         decoration: BoxDecoration(
             color: ColorUtil().primaryOrange,
             borderRadius: const BorderRadius.all(Radius.circular(15)),
@@ -33,7 +33,7 @@ class ButtonOrangeWidget extends StatelessWidget {
                 text ?? "",
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
-                  fontSize: 16,
+                  fontSize: 14,
                   color: Colors.white,
                 ),
               ),

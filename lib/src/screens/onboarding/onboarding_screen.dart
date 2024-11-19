@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../core/constants/asset_string.dart';
+import '../../core/constants/data_string.dart';
 import '../../core/constants/route_string.dart';
 import '../../core/utils/color_util.dart';
 import '../../core/widgets/button_black_widget.dart';
@@ -26,30 +27,6 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
   int _currentPage = 0;
 
-  final List<Map<String, dynamic>> _pages = [
-    {
-      "title": "Pelayanan Terjamin",
-      "description":
-          "Memastikan layanan yang konsisten, berkualitas, dan dapat diandalkan, memberikan rasa aman serta kepuasan pelanggan.",
-      "image": AssetString.useOnboarding1,
-      "intersect": AssetString.useIntersect1
-    },
-    {
-      "title": "Pembayaran Mudah",
-      "description":
-          "Menyediakan proses pembayaran yang cepat, sederhana, dan tanpa hambatan untuk kenyamanan pelanggan.",
-      "image": AssetString.useOnboarding2,
-      "intersect": AssetString.useIntersect2
-    },
-    {
-      "title": "Makanan Istimewa",
-      "description":
-          "Menawarkan hidangan berkualitas tinggi dengan cita rasa unik yang disiapkan secara khusus untuk memberikan pengalaman kuliner yang berkesan.",
-      "image": AssetString.useOnboarding3,
-      "intersect": AssetString.useIntersect3
-    }
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +37,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
         children: [
           PageView.builder(
             controller: controller,
-            itemCount: _pages.length,
+            itemCount: DataString.onboardingPages.length,
             onPageChanged: (value) {
               setState(() {
                 _currentPage = value;
@@ -68,10 +45,10 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             },
             itemBuilder: (_, index) {
               return OnboardingBackgroundScreen(
-                title: _pages[index]["title"],
-                description: _pages[index]["description"],
-                image: _pages[index]["image"],
-                intersect: _pages[index]["intersect"],
+                title: DataString.onboardingPages[index]["title"],
+                description: DataString.onboardingPages[index]["description"],
+                image: DataString.onboardingPages[index]["image"],
+                intersect: DataString.onboardingPages[index]["intersect"],
               );
             },
           ),
@@ -80,7 +57,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             padding: const EdgeInsets.only(top: 24),
             child: SmoothPageIndicator(
               controller: controller, // PageController
-              count: _pages.length,
+              count: DataString.onboardingPages.length,
               effect: WormEffect(
                   activeDotColor: ColorUtil().tertiaryBlack,
                   dotColor: Colors.white,

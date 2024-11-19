@@ -13,6 +13,10 @@ class AssetString {
   static const String useIntersect2 = "assets/illustrations/use-intersect2.png";
   static const String useIntersect3 = "assets/illustrations/use-intersect3.png";
   static const String useLoginDeco = "assets/illustrations/use-login-deco.png";
+  static const String useBgCardMakanan =
+      "assets/illustrations/use-bg-card-makanan.png";
+  static const String useBgCardMinuman =
+      "assets/illustrations/use-bg-card-minuman.png";
 
   //* LOGOS
   static const String useSplash = "assets/logos/gos-splash.png";

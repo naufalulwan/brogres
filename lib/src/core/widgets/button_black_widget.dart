@@ -39,14 +39,14 @@ class ButtonBlackWidget extends StatelessWidget {
                       text ?? "",
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w600,
-                        fontSize: 16,
+                        fontSize: 14,
                         color: Colors.white,
                       ),
                     )
                   : Icon(
                       icon,
                       color: Colors.white,
-                      size: 31,
+                      size: 26,
                     ),
             ),
           ),

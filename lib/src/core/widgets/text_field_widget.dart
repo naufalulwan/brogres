@@ -57,7 +57,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               Text(
                 widget.title!,
                 style: GoogleFonts.poppins(
-                    fontSize: 15,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500,
                     color: ColorUtil().tertiaryBlack),
               ),

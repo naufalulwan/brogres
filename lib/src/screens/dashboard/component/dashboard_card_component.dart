@@ -4,10 +4,10 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../constants/asset_string.dart';
-import '../constants/route_string.dart';
-import '../utils/color_util.dart';
-import '../widgets/button_orange_widget.dart';
+import '../../../core/constants/asset_string.dart';
+import '../../../core/constants/route_string.dart';
+import '../../../core/utils/color_util.dart';
+import '../../../core/widgets/button_orange_widget.dart';
 
 class DashboardCardComponent extends StatefulWidget {
   const DashboardCardComponent({super.key});
@@ -22,7 +22,7 @@ class _DashboardCardComponentState extends State<DashboardCardComponent> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 28),
+      margin: const EdgeInsets.only(top: 28),
       elevation: 4,
       child: Padding(
         padding: const EdgeInsets.only(left: 16, right: 16, top: 10),
@@ -34,28 +34,27 @@ class _DashboardCardComponentState extends State<DashboardCardComponent> {
               children: [
                 Image.asset(
                   AssetString.iconInsight,
-                  width: 40,
+                  width: 32,
                 ),
                 const Gap(5),
                 RichText(
                     text: TextSpan(
-                        text: "Insight ",
+                        text: "Insight",
                         style: GoogleFonts.poppins(
                             color: ColorUtil().tertiaryBlack,
-                            fontSize: 18,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600),
                         children: [
-                      const TextSpan(
-                        text: '( ',
-                      ),
+                      TextSpan(
+                          text: ' - ',
+                          recognizer: TapGestureRecognizer()..onTap = () {},
+                          style: GoogleFonts.poppins()),
                       TextSpan(
                           text: 'Harian',
                           recognizer: TapGestureRecognizer()..onTap = () {},
                           style: GoogleFonts.poppins(
-                              color: ColorUtil().touchesBlue)),
-                      const TextSpan(
-                        text: ' )',
-                      ),
+                            color: ColorUtil().touchesBlue,
+                          )),
                     ]))
               ],
             ),
@@ -63,12 +62,12 @@ class _DashboardCardComponentState extends State<DashboardCardComponent> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Pendapatan", style: GoogleFonts.poppins(fontSize: 16)),
+                Text("Pendapatan", style: GoogleFonts.poppins(fontSize: 14)),
                 Row(
                   children: [
                     Text(isObscureText ? "••••••••••" : "Rp. 500,000",
                         style: GoogleFonts.poppins(
-                            fontSize: 16, fontWeight: FontWeight.w600)),
+                            fontSize: 14, fontWeight: FontWeight.w600)),
                     const Gap(9),
                     InkWell(
                         borderRadius: BorderRadius.circular(50),
@@ -77,9 +76,12 @@ class _DashboardCardComponentState extends State<DashboardCardComponent> {
                             isObscureText = !isObscureText;
                           });
                         },
-                        child: Icon(isObscureText
-                            ? Icons.visibility_outlined
-                            : Icons.visibility_off_rounded)),
+                        child: Icon(
+                          isObscureText
+                              ? Icons.visibility_outlined
+                              : Icons.visibility_off_rounded,
+                          size: 20,
+                        )),
                   ],
                 )
               ],
@@ -89,10 +91,10 @@ class _DashboardCardComponentState extends State<DashboardCardComponent> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text("Produk Terjual",
-                    style: GoogleFonts.poppins(fontSize: 16)),
+                    style: GoogleFonts.poppins(fontSize: 14)),
                 Text("30",
                     style: GoogleFonts.poppins(
-                        fontSize: 16, fontWeight: FontWeight.w600))
+                        fontSize: 14, fontWeight: FontWeight.w600))
               ],
             ),
             const Gap(28),

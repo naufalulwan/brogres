@@ -45,7 +45,7 @@ class UnknownScreen extends StatelessWidget {
               "Ups! Halaman ini kosong",
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 18,
               ),
             ),
             const Gap(10),
