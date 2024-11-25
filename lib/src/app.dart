@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import './routes/config_route.dart';
+
+import 'configs/route_config.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,9 +10,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp.router(
       debugShowCheckedModeBanner: false,
-      routeInformationProvider: ConfigRoute.go.routeInformationProvider,
-      routeInformationParser: ConfigRoute.go.routeInformationParser,
-      routerDelegate: ConfigRoute.go.routerDelegate,
+      routeInformationProvider: RouteConfig.go.routeInformationProvider,
+      routeInformationParser: RouteConfig.go.routeInformationParser,
+      routerDelegate: RouteConfig.go.routerDelegate,
     );
   }
 }
