@@ -1,4 +1,4 @@
-part of '../global.dart';
+import 'package:flutter_clean_architecture/flutter_clean_architecture.dart';
 
 class UseCaseObserverUtil<T, E> implements Observer<T> {
   void Function(T?, E?, Exception?)? response;

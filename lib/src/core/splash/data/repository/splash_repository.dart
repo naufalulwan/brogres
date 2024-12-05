@@ -1,5 +1,8 @@
 part of '../data.dart';
 
 abstract class SplashRepository {
-  Future<Either<ErrorHandleUtil, SplashTokenEntity>> fetchTokenSplash();
+  Future<dz.Either<ErrorModelHelper, TokenDeviceEntity>> fetchTokenSplash();
+  Future<String> getTokenSplash();
+  Future<bool> getFirstTimeSplash();
+  Future<dz.Either<ErrorModelHelper, InfoLoginEntity>> fetchLoginInfo();
 }

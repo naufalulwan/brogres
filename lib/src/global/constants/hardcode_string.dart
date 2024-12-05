@@ -1,4 +1,4 @@
-part of '../global.dart';
+import '../global.dart';
 
 class HardCodeString {
   static final List<Map<String, dynamic>> onboardingPages = [
@@ -24,4 +24,7 @@ class HardCodeString {
       "intersect": AssetString.useIntersect3
     }
   ];
+
+  static const String errorRemote =
+      "tidak dapat terhubung ke server, silahkan coba lagi";
 }

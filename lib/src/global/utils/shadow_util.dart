@@ -1,4 +1,4 @@
-part of '../global.dart';
+import 'package:flutter/material.dart';
 
 class ShadowUtil {
   static BoxShadow boxButton() {

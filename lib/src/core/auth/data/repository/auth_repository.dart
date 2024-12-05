@@ -1,6 +1,6 @@
 part of '../data.dart';
 
 abstract class AuthRepository {
-  Future<dz.Either<ErrorHandleUtil, LoginEntity>> login(
+  Future<dz.Either<ErrorModelHelper, LoginEntity>> login(
       LoginRequestEntity param);
 }

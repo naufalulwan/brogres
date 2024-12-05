@@ -1,13 +1,17 @@
+import '../../../configs/dio_client_config.dart';
 import '../../../configs/locator_config.dart';
-import '../../../global/global.dart';
 import '../auth_core.dart';
 
 Future<void> authDI() async {
-  locator.registerLazySingleton<AuthDataSource>(
-      () => AuthDataSourceImpl(dio: locator<DioClientUtil>().dioClient.dio));
+  locator.registerLazySingleton<AuthDataSourceRemote>(
+      () => AuthDataSourceRemoteImpl(dio: locator<DioClient>().dioClient.dio));
 
-  locator.registerLazySingleton<AuthRepository>(
-      () => AuthRepositoryImpl(authDataSource: locator<AuthDataSource>()));
+  locator.registerLazySingleton<AuthDataSourceLocal>(
+      () => AuthDataSourceLocalImpl());
+
+  locator.registerLazySingleton<AuthRepository>(() => AuthRepositoryImpl(
+      authDataSourceRemote: locator<AuthDataSourceRemote>(),
+      authDataSourceLocal: locator<AuthDataSourceLocal>()));
 
   locator.registerLazySingleton<LoginUseCase>(
       () => LoginUseCase(authRepository: locator<AuthRepository>()));

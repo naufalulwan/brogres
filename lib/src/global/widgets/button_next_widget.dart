@@ -1,4 +1,7 @@
-part of '../global.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../global.dart';
 
 Widget buttonNextWidget(
     {void Function()? onTapSkip, void Function()? onTapNext}) {
@@ -18,10 +21,10 @@ Widget buttonNextWidget(
             style: GoogleFonts.poppins(
                 fontSize: 15,
                 fontWeight: FontWeight.w600,
-                color: ColorUtil().tertiaryBlack),
+                color: ColorHelper.tertiaryBlack),
           ),
         ),
-        ButtonBlackWidget(
+        buttonBlackWidget(
           onPressed: onTapNext,
           icon: Icons.arrow_forward_rounded,
           width: 50,

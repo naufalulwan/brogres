@@ -15,7 +15,7 @@ class UnknownScreen extends StatelessWidget {
       )),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-        child: ButtonOrangeWidget(
+        child: buttonOrangeWidget(
           text: "Kembali",
           onPressed: () {
             context.pop();

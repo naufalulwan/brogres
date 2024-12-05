@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: ColorUtil().secondaryVanilla,
+      backgroundColor: ColorHelper.secondaryVanilla,
       body: Center(
           child: SizedBox(
         width: 230,

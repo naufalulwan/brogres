@@ -16,7 +16,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorUtil().primaryOrange,
+      backgroundColor: ColorHelper.primaryOrange,
       body: SafeArea(
           child: Stack(
         alignment: Alignment.bottomCenter,
@@ -30,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               });
             },
             itemBuilder: (_, index) {
-              return OnboardingBackgroundScreen(
+              return OnboardingBase(
                 title: HardCodeString.onboardingPages[index]["title"],
                 description: HardCodeString.onboardingPages[index]
                     ["description"],
@@ -46,38 +46,35 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               controller: controller, // PageController
               count: HardCodeString.onboardingPages.length,
               effect: WormEffect(
-                  activeDotColor: ColorUtil().tertiaryBlack,
+                  activeDotColor: ColorHelper.tertiaryBlack,
                   dotColor: Colors.white,
                   dotHeight: 10,
                   dotWidth: 24,
                   spacing: 12), // your preferred effect
             ),
           ),
-          AnimatedSizeAndFade(
-            sizeDuration: const Duration(milliseconds: 600),
-            child: _currentPage == 2
-                ? Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: ButtonBlackWidget(
-                      text: "Yuk Mulai",
-                      onPressed: () {
-                        context.pushReplacement(RouteString.loginScreen);
-                      },
-                    ),
-                  )
-                : buttonNextWidget(
-                    onTapSkip: () {
-                      controller.jumpToPage(2);
-                    },
-                    onTapNext: () {
-                      if (_currentPage != 2) {
-                        controller.nextPage(
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.fastOutSlowIn);
-                      }
+          _currentPage == 2
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: buttonBlackWidget(
+                    text: "Yuk Mulai",
+                    onPressed: () {
+                      context.pushReplacement(RouteString.loginScreen);
                     },
                   ),
-          )
+                )
+              : buttonNextWidget(
+                  onTapSkip: () {
+                    controller.jumpToPage(2);
+                  },
+                  onTapNext: () {
+                    if (_currentPage != 2) {
+                      controller.nextPage(
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.fastOutSlowIn);
+                    }
+                  },
+                )
         ],
       )),
     );

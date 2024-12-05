@@ -1,5 +1,3 @@
-part of '../global.dart';
-
 class RouteString {
   static const String splashScreen = "/";
   static const String onboardingScreen = "/onboarding-screen";

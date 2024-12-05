@@ -6,12 +6,12 @@ extension LoginDTOMapper on LoginDTO {
         id: id!,
         error: error!,
         message: message!,
-        username: userDTO!.username!,
-        email: userDTO!.email!,
-        level: userDTO!.level!,
-        token: authorizationDTO!.token!,
-        refreshToken: authorizationDTO!.refreshToken!,
-        type: authorizationDTO!.type!);
+        username: user!.username!,
+        email: user!.email!,
+        level: user!.level!,
+        token: authorization!.token!,
+        refreshToken: authorization!.refreshToken!,
+        type: authorization!.type!);
   }
 }
 
@@ -21,12 +21,12 @@ extension LoginMapper on LoginEntity {
       id: id,
       error: error,
       message: message,
-      userDTO: UserDTO(
+      user: UserDTO(
         username: username,
         email: email,
         level: level,
       ),
-      authorizationDTO: AuthorizationDTO(
+      authorization: AuthorizationDTO(
         token: token,
         refreshToken: refreshToken,
         type: type,

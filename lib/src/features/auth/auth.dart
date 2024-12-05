@@ -1,5 +1,3 @@
-import 'package:brogres/src/configs/stored_config.dart';
-import 'package:brogres/src/global/utils/string_formatting_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
@@ -14,10 +12,15 @@ import '../../global/global.dart';
 
 export 'auth.dart';
 
-part 'screen/login_screen.dart';
-part 'component/login_button_component.dart';
-part 'component/login_checkbox_component.dart';
-part 'component/login_formfield_component.dart';
-part 'component/login_runningtext_component.dart';
-part 'controller/auth_controller.dart';
-part 'binding/auth_binding.dart';
+//$ Login
+part 'login/screen/login_screen.dart';
+part 'login/component/login_button_component.dart';
+part 'login/component/login_checkbox_component.dart';
+part 'login/component/login_formfield_component.dart';
+part 'login/component/login_runningtext_component.dart';
+part 'login/controller/auth_controller.dart';
+part 'login/binding/auth_binding.dart';
+
+//$ Forgot Password
+
+//$ Help Desk

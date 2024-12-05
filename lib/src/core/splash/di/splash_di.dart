@@ -1,15 +1,29 @@
+import '../../../configs/dio_client_config.dart';
 import '../../../configs/locator_config.dart';
-import '../../../global/global.dart';
+
 import '../data/data.dart';
 import '../domain/domain.dart';
 
 Future<void> splashDI() async {
-  locator.registerLazySingleton<SplashDataSource>(
-      () => SplashDataSourceImpl(dio: locator<DioClientUtil>().dioClient.dio));
+  locator.registerLazySingleton<SplashDataSourceRemote>(() =>
+      SplashDataSourceRemoteImpl(dio: locator<DioClient>().dioClient.dio));
 
-  locator.registerLazySingleton<SplashRepository>(() =>
-      SplashRepositoryImpl(splashDataSource: locator<SplashDataSource>()));
+  locator.registerLazySingleton<SplashDataSourceLocal>(
+      () => SplashDataSourceLocalImpl());
 
-  locator.registerLazySingleton<FetchTokenSplashUseCase>(() =>
-      FetchTokenSplashUseCase(splashRepository: locator<SplashRepository>()));
+  locator.registerLazySingleton<SplashRepository>(() => SplashRepositoryImpl(
+      splashDataSourceRemote: locator<SplashDataSourceRemote>(),
+      splashDataSourceLocal: locator<SplashDataSourceLocal>()));
+
+  locator.registerLazySingleton<FetchTokenDeviceUseCase>(() =>
+      FetchTokenDeviceUseCase(splashRepository: locator<SplashRepository>()));
+
+  locator.registerLazySingleton<FetchInfoLoginUsecase>(() =>
+      FetchInfoLoginUsecase(splashRepository: locator<SplashRepository>()));
+
+  locator.registerLazySingleton<GetTokenDeviceUseCase>(() =>
+      GetTokenDeviceUseCase(splashRepository: locator<SplashRepository>()));
+
+  locator.registerLazySingleton<GetFirstLoginUseCase>(() =>
+      GetFirstLoginUseCase(splashRepository: locator<SplashRepository>()));
 }

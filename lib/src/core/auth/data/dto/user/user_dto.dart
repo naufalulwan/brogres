@@ -7,7 +7,7 @@ class UserDTO {
   final String? username;
   final String? email;
   final String? level;
-  final String? status;
+  final bool? status;
 
   UserDTO({
     this.username,

@@ -29,6 +29,7 @@ class ExceptionContentComponent extends StatelessWidget {
             ),
             Text(
               title,
+              textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -38,7 +39,7 @@ class ExceptionContentComponent extends StatelessWidget {
             Text(message,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                    fontSize: 12, color: ColorUtil.color("727272"))),
+                    fontSize: 12, color: ColorHelper.color("727272"))),
           ],
         ),
       ),

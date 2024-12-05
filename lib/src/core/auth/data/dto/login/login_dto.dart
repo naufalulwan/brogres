@@ -1,4 +1,3 @@
-import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../authorization/authorization_dto.dart';
@@ -12,16 +11,16 @@ class LoginDTO {
   final bool? error;
   final int? code;
   final String? message;
-  final UserDTO? userDTO;
-  final AuthorizationDTO? authorizationDTO;
+  final UserDTO? user;
+  final AuthorizationDTO? authorization;
 
   LoginDTO({
     this.id,
     this.error,
     this.code,
     this.message,
-    this.userDTO,
-    this.authorizationDTO,
+    this.user,
+    this.authorization,
   });
 
   factory LoginDTO.fromJson(Map<String, dynamic> json) =>

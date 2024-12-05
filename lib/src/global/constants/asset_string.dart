@@ -1,7 +1,5 @@
-part of '../global.dart';
-
 class AssetString {
-  //* ILLUSTRATIONS
+  //$ ILLUSTRATIONS
   static const String useEmpty = "assets/illustrations/use-empty.png";
   static const String useMaintenance =
       "assets/illustrations/use-maintenance.png";
@@ -20,10 +18,10 @@ class AssetString {
   static const String useBgCardMinuman =
       "assets/illustrations/use-bg-card-minuman.png";
 
-  //* LOGOS
+  //$ LOGOS
   static const String useSplash = "assets/logos/gos-splash.png";
 
-  //* ICONS
+  //$ ICONS
   static const String iconFingerprint = "assets/icons/icon-fingerprint.png";
   static const String iconHello = "assets/icons/icon-hello.png";
   static const String iconQuestion = "assets/icons/icon-question.png";
